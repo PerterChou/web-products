@@ -1,0 +1,466 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background: aliceblue;
+}
+a{
+	text-decoration: none;
+	
+}
+a:visited{
+	color: aliceblue;
+}
+.container{
+  width:100%;
+  height:100vh;
+	display: flex;
+	flex-direction: column;
+}
+.header{
+  position:fixed;
+  z-index:9997;
+  top:0;
+  width:100%;
+  height:100px;
+  background:url(../img/bg.png);
+  background-size:100% 100px;
+  background-position:center top;
+  background-attachment:fixed;
+	box-shadow:3px 4px 5px rgba(0,0,0,0.5);
+}
+.header::after{
+	content: '';
+	display: block;
+	position: absolute;
+	height: 50px;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	right: 0;
+	background-image: url(../img/myuki-logo.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.header:hover .header-inner{
+	top: 0;
+}
+.header-inner{
+  position:relative;
+  height:100%;
+  z-index:9997;
+  margin:0 auto;
+  overflow:hidden;
+  border-radius:20px;
+	background-color: white;
+	transition: all .3s ease;
+	width: 320px;
+	background-color: black;
+	color: aliceblue;
+	opacity: 0.8;
+	top: 0;
+}
+.header-inner::before{
+  content:'';
+  position:absolute;
+  z-index:9998;
+  background:url(../img/bg.png);
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  filter:blur(4.0rem);
+  background-size:100% 100px;
+  background-position:center top;
+  background-attachment:fixed;
+  margin:-20px;
+}
+.header-bar{
+  height:100%;
+  margin:0 auto;
+  padding:0 40px;
+}
+.header-bar-list{
+  display:flex;
+  align-items:center;
+  justify-content: space-around;
+  flex-direction:row;
+  margin:0 auto;
+  paddding:32px;
+  width:100%;
+  height:100%;
+}
+.header-bar-list .list-item{
+	text-shadow: 2px 2px rgba(0,0,0,0.6);
+	
+}
+
+.list-item{
+  list-style:none;
+  display:block;
+  padding 4px;
+  margin:4px 8px;
+	width: 64px;
+	height: 32px;
+  z-index:9999;
+  cursor:pointer;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	position: relative;
+	text-align: center;
+}
+.list-item.active::after{
+	content: '';
+	height: 4px;
+	width: 100%;
+	bottom: 0;
+	background-color: aliceblue;
+	position: absolute;
+	display: block;
+	border-radius: 2px;
+}
+.content{
+  width:100%;
+  margin-top:100px;
+  padding:12px 32px;
+	flex: 1 1 auto;
+	height: 80%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-image: url(../img/content.jpeg);
+	background-size: cover;
+	background-position:center top;
+	background-attachment: fixed;
+	z-index: 1000;
+	align-items: baseline;
+	
+}
+.left-content{
+	position: fixed;
+	top: 100px;
+	width: 20%;
+	height: 800px;
+	margin: 20px 0;
+	flex:1 1 200px;
+	background-size:contain;
+	background-position:center top;
+	background-attachment:fixed;
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.left-inner{
+	position: sticky;
+	top: 100px;
+	max-height: 400px;
+	width: 100%;
+	overflow: hidden;
+	border-radius: 24px;
+	z-index: 1001;
+	flex: 2 1 auto;
+	margin-bottom: 20px;
+	background-color: white;
+	opacity: 0.5;
+	padding: 32px 0;
+}
+
+.left-inner::before{
+	content: '';
+	position: absolute;
+	z-index: 999;
+	top:0;
+	right:0;
+	left:0;
+	bottom: 0;
+	filter:blur(4.0rem);
+	background: url(../img/content.jpeg);
+	background-size:cover;
+	background-position:center top;
+	background-attachment:fixed;
+	margin:-20px;
+}
+.left-sidebar{
+	position: relative;
+	display: flex;
+	z-index: 9990;
+	width: inherit;
+	min-width: 128px;
+	max-height: 400px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 16px 32px;
+	justify-content: space-around;
+	align-items: center;
+	overflow-y: scroll;
+	box-sizing: border-box;
+	bottom: 20px;
+}
+.left-content::after{
+	position: absolute;
+	content: '';
+	width: 32px;
+	height: 32px;
+	display: block;
+	background-image: url(../img/icontag.png);
+	background-size: 100%;
+	z-index: 9999;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.left-sidebar .list-item{
+	padding: 2px 4px;
+	text-decoration: underline;
+}
+.left-sidebar::-webkit-scrollbar{
+	width: 0 !important;
+}
+.right-content	{
+	width: 60%;
+	flex: 1 1 auto;
+	position: fixed;
+	top: 100px;
+	margin: 20px 10% 10% 25%;
+	box-sizing: border-box;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.right-inner{
+	position: relative;
+	width: 100%;
+	max-height: 800px;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 24px;
+	z-index: 1001;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	background-color: white;
+	opacity: 0.5;
+	
+}
+.right-inner::before{
+	content: '';
+	position: absolute;
+	z-index: 999;
+	top:0;
+	right:0;
+	left:0;
+	bottom: 0;
+	height: 100%;
+	filter:blur(4.0rem);
+	background: url(../img/content.jpeg);
+	background-size:cover;
+	background-position:center top;
+	background-attachment:fixed;
+	margin: -20px;
+}
+
+.content-list{
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	max-height: 100%;
+	padding: 32px 64px;
+	align-items: center;
+	 overflow-y: scroll;
+	z-index: 1002;
+}
+.content-list::-webkit-scrollbar{
+	width: 0 !important;
+}
+.content-item{
+	display: block;
+	position: relative;
+	z-index: 1003;
+	min-height: 120px;
+	width: 100%;
+	background-color: white;
+	opacity: 0.6;
+	margin: 32px 64px;
+	border-radius: 24px;
+	cursor: pointer;
+}
+.other-info{
+	width: 15%;
+	flex: 1 1 auto;
+	position: fixed;
+	top: 100px;
+	margin: 20px 2.5% 10% 85%;
+	box-sizing: border-box;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-height: 800px;
+	justify-content: space-between;
+	z-index: 1002;
+}
+.weather-box{
+	position: relative;
+	padding-top: 32px;
+	display: flex;
+	min-width: 150px;
+	min-height: 200px;
+	height: 40%;
+	background-color: white;
+	opacity: 0.5;
+	border-radius: 24px;
+	flex-direction: column;
+	align-items: center;
+	z-index: 1004;
+	cursor: pointer;
+}
+.weather-box::after{
+	content: '';
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	display: block;
+	z-index: 1005;
+	background-image: url(../img/wea.png);
+	background-size: cover;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.weather-box::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: -20px;
+	z-index: 1003;
+	filter: blur(4.0rem);
+	background-image: url(../img/content.jpeg);
+	background-size: cover;
+	background-attachment: fixed;
+}
+.asay-box{
+	position: relative;
+	display: flex;
+	min-width: 150px;
+	min-height: 200px;
+	padding-top: 32px;
+	height: 40%;
+	background-color: white;
+	opacity: 0.5;
+	border-radius: 24px;
+	flex-direction: column;
+	align-items: center;
+	z-index: 1004;
+	cursor: pointer;
+}
+.asay-box::after{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 32px;
+	height: 32px;
+	z-index: 1005;
+	background-image: url(../img/juzi.png);
+	background-size: cover;
+	top:0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.asay-box::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1003;
+	margin: -20px;
+	filter: blur(4.0rem);
+	background-image: url(../img/content.jpeg);
+	background-size: cover;
+	background-attachment: fixed;
+}
+.box-title{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 4px 8px;
+	z-index: 9999;
+	text-shadow: 2px 2px rgba(0,0,0,0.6);
+}
+.box-content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.weather-icon{
+	position: relative;
+	display: block;
+	width: 64px;
+	height: 64px;
+	background-image: url(../img/qing.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	z-index: 9999;
+}
+.weather-details-item{
+	position: relative;
+	display: block;
+	width: 128px;
+	height: 32px;
+	padding: 4px 8px;
+	z-index: 9999;
+	text-align: center;
+}
+.footer{
+	display: block;
+	width: 100%;
+	height: 200px;
+	padding: 20px;
+	background-color: white;
+	opacity: 0.6;
+	flex: 1 1 auto;
+}
+.footer::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: url(../img/content.jpeg);
+	background-position: center top;
+	background-size: cover;
+	background-attachment: fixed;
+}
+#hitokoto_text{
+	position: relative;
+	z-index: 9999;
+	width: 128px;
+	height: 256px;
+	padding: 4px 8px;
+	margin-top: 8px;
+}
+.asay-box-item{
+	position: relative;
+	width: 128px;
+	height: 64px;
+	padding: 4px 8px;
+	z-index: 9999;
+	text-align: center;
+}

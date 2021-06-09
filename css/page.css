@@ -1,0 +1,43 @@
+.page-switch{
+	display: block;
+	position: relative;
+	width: 75%;
+	height: 36px;
+	border-radius: 12px;
+	background-color: white;
+	opacity: 0.6;
+	z-index: 1002;
+	margin: 20px auto;
+	display: flex;
+	align-items: center;
+}
+.page-prev{
+	position: absolute;
+	display: block;
+	width: 32px;
+	height: 32px;
+	left: 6px;
+	background-image: url(../img/previous.png);
+	background-size: cover;
+	cursor: pointer;
+}
+.page-next{
+	position: absolute;
+	display: block;
+	width: 32px;
+	height: 32px;
+	right: 6px;
+	background-image: url(../img/next.png);
+	background-size: cover;
+	cursor: pointer;
+}
+.page-select{
+	display: flex;
+	min-width: 64px;
+	height: 32px;
+	margin: 0 auto;
+	cursor: pointer;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}

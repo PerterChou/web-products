@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MyukiのBlog</title>
+    <link rel="stylesheet" type="text/css" href="css/com-myuki-index.css">
+		<link rel="icon" href="img/mylogo.png" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/page.css"/>
+		<link rel="stylesheet" href="css/myaudio.css">
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/playmusic.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/nekoscroll.min.js"></script>
+		<script src="js/page.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/weather.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/onetalk.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/myaudio.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/qiehuan.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+  <body>
+		
+    <div class="container">			
+      <div class="header">
+        <div class="header-inner">
+          <div class="header-bar">
+            <ul class="header-bar-list">
+              <li class="list-item">首页</li>
+              <li class="list-item">文章</li>
+              <li class="list-item"><a href="test/Lunbotu.html">美图</a></li>
+              <li class="list-item">分享</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="left-content">
+          <div class="left-inner">
+            <ul class="left-sidebar">
+              <li class="list-item">随笔</li>
+              <li class="list-item">数据结构</li>
+							<li class="list-item">操作系统</li>
+              <li class="list-item">linux</li>
+							<li class="list-item">macos</li>
+							<li class="list-item">机器学习</li>
+              <li class="list-item">编译原理</li>
+							<li class="list-item">新番推荐</li>
+							<li class="list-item">电影推荐</li>
+							<li class="list-item">轻小说推荐</li>
+							<li class="list-item">小说推荐</li>
+							<li class="list-item">漫画推荐</li>
+							<li class="list-item">vue</li>
+							<li class="list-item">jquery</li>
+              <li class="list-item">资源分享</li>
+							<li class="list-item">英语</li>
+							<li class="list-item">日语</li>
+							<li class="list-item">数学</li>
+							<li class="list-item">政治</li>
+              <li class="list-item">前端</li>
+							<li class="list-item">python</li>
+							<li class="list-item">java</li>
+							<li class="list-item">c/c++</li>
+							<li class="list-item">命运石之门</li>
+							<li class="list-item">三体</li>
+							<li class="list-item">摇曳露营</li>
+							<li class="list-item">侠肝义胆沈剑心</li>
+							<li class="list-item">我的青春恋爱物语果然有问题</li>
+              <li class="list-item">其他</li>
+            </ul>
+          </div>
+					<div id="myaudio">
+						<audio src="" id="audio-player">
+						</audio>
+						<div class="box-title">听 ♪ 呗</div>
+						<div id="audio-control">
+							<div id="audio-prev" class="audio-btn"></div>
+							<div id="audio-model" class="audio-btn"></div>
+							<div id="audio-next" class="audio-btn"></div>
+						</div>
+						<div id="audio-pad">
+							<div id="audio-pointer" class="audio-play-off"></div>
+						</div>
+						<div id="songs-info">
+							<div class="songName"></div>
+							<ul class="songLyricList"></ul>
+						</div>
+					</div>
+        </div>
+        <div class="right-content">
+          <div class="right-inner">
+						<ul class="content-list">
+							<li class="content-item" data-itemno="1">1</li>
+							<li class="content-item" data-itemno="2">2</li>
+							<li class="content-item" data-itemno="3">3</li>
+							<li class="content-item" data-itemno="4">4</li>
+							<li class="content-item" data-itemno="5">5</li>
+							<li class="content-item" data-itemno="6">6</li>
+							<li class="content-item" data-itemno="7">7</li>
+							<li class="content-item" data-itemno="8">8</li>
+							<li class="content-item" data-itemno="9">9</li>
+							<li class="content-item" data-itemno="10">10</li>
+							<li class="content-item" data-itemno="11">11</li>
+							<li class="content-item" data-itemno="12">12</li>
+							<li class="content-item" data-itemno="13">13</li>
+							<li class="content-item" data-itemno="14">14</li>
+						</ul>
+						<div class="page-switch">
+							<div class="page-prev"></div>
+							<div class="page-select">
+								<span class="curpage">1</span>
+								<span>/</span>
+								<span class="totalpage">1</span>
+							</div>
+							<div class="page-next"></div>
+						</div>
+          </div>
+        </div>
+				<div class="other-info">
+					<div class="weather-box">
+						<div class="box-title">今日天气</div>
+						<div class="box-content">
+							<div class="weather-icon"></div>
+							<div class="weather-details-item" id="city-temp"></div>
+							<div class="weather-details-item" id="temp-range"></div>
+							<div class="weather-details-item" id="wind"></div>
+							<div class="weather-details-item" id="air"></div>
+							<div class="weather-details-item" id="update-time"></div>
+						</div>
+					</div>
+					<div class="asay-box">
+						<div class="box-title">每日一言</div>
+						<div class="box-content">
+							<div id="hitokoto_text"></div>
+							<div class="asay-box-item" id="author"></div>
+						</div>
+					</div>
+				</div>
+      </div>
+      <div class="footer">
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+#myaudio{
+	display: block;
+	position: relative;
+	width: 100%;
+	min-width: 200px;
+	flex: 1 1 200px;
+	border-radius: 24px;
+	z-index: 999;
+	overflow: hidden;
+	flex-direction: column;
+}
+#myaudio::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	filter: blur(4.0rem);
+	background-image: url(../img/content.jpeg);
+	background-size: cover;
+	background-position:center top;
+	background-attachment: fixed;
+	z-index: 998;
+	margin: -20px;
+}
+#myaudio::after{
+	content: '';
+	position: absolute;
+	display: block;
+	height: 32px;
+	width: 128px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 998;
+	background-image: url(../img/music.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#myaudio .box-title{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-top: 32px;
+}
+#audio-pad{
+	position: relative;
+	width: 200px;
+	height: 200px;
+	left: 50%;
+	top: 50%;
+	display: block;
+	transform: translate(-50%,-50%);
+	background-image: url(../img/audio-底座.png);
+	background-size: cover;
+	z-index: 1000;
+}
+#audio-pad::after{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 200px;
+	height: 200px;
+	background-image: url(../img/changpian.png);
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	top:0;
+	left: -11px;
+	bottom: 0;
+	;
+}
+
+#audio-pointer{
+	position: absolute;
+	display: block;
+	width: 76px;
+	height: 93px;
+	background-image: url(../img/audio-pointer.png);
+	background-size: cover;
+	transform-origin: 0 0;
+	top: 40px;
+	right: -30px;
+	z-index: 1001;
+	cursor: pointer;
+}
+.audio-play-on{
+	transition: all .5s ease;
+	transform: rotate(65deg);
+}
+.audio-play-off{
+	transition: all .5s ease;
+	transform: rotate(45deg);
+}
+.audio-pad-on::after{
+	animation: xuanzhuan 2.5s linear infinite;
+}
+@keyframes xuanzhuan{
+	from{transform: rotate(0)}
+  to{transform: rotate(360deg)}
+}
+#songs-info{
+	display: flex;
+	position: absolute;
+	min-width: 200px;
+	height: 128px;
+	flex-direction: column;
+	align-items: center;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 999;
+}
+#songs-info .songName{
+	width: 100%;
+	height: 32px;
+	text-align: center;
+	font-size: 18px;
+	padding: 2px 4px;
+	box-shadow: 0 2px 5px aliceblue;
+	border-radius: 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+#songs-info .songLyricList{
+	position: absolute;
+	z-index: 999;
+	width: 100%;
+	height: 96px;
+	padding: 4px 8px;
+	bottom: 0;
+	overflow: hidden;
+}
+.songLyricList li{
+	list-style: none;
+	text-align: center;
+	height: 32px;
+	box-sizing: border-box;
+	font-size: 12px;
+}
+.songLyricList li.active{
+	color: aliceblue;
+}
+#audio-control{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	position: absolute;
+	width: 100%;
+	top: 64px;
+	height: 64px;
+	z-index: 9990;
+	padding: 0 12px;
+}
+.audio-btn{
+	display: block;
+	width: 48px;
+	height: 48px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+	position: relative;
+	z-index: 9999;
+}
+#audio-prev{
+	background-image: url(../img/houtui.png);
+}
+#audio-model{
+	background-image: url(../img/shunxu.png);
+}
+#audio-model.random{
+	background-image: url(../img/suiji.png);
+}
+#audio-next{
+	background-image: url(../img/qianjin.png);
+}

@@ -1,0 +1,115 @@
+* {
+	padding: 0px;
+	margin: 0px
+}
+
+body::-webkit-scrollbar {
+	width: 0 !important;
+}
+
+.neko {
+	width: 64px;
+	height: 64px;
+	background-image: url(../img/猫.png);
+	position: absolute;
+	right: 32px;
+	background-repeat: no-repeat;
+	display: block;
+	background-size: contain;
+	transform: translateX(50%);
+	cursor: pointer;
+	font-family: 'quyuanri25928b2fb22277f';
+	font-weight: 600;
+	font-size: 16px;
+}
+
+/* 			#neko::before{
+				content: "";
+				display: block;
+				width: 100px;
+				height: 100px;
+				background-image: url(img/灯笼.png);
+				z-index: 9999;
+				right: 50%;
+				position: absolute;
+				background-size: contain;
+				transform: translateX(50%);
+				top: 80%;
+			} */
+.neko::after {
+	display: none;
+	width: 100px;
+	height: 100px;
+	background-image: url(../img/hanashi.png);
+	background-size: contain;
+	z-index: 9999;
+	position: absolute;
+	right: 50%;
+	text-align: center;
+	line-height: 100px;
+	/* transform: translateX(-25%); */
+	top: -100%;
+
+}
+
+.neko.showMsg::after {
+	content: attr(data-msg);
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.neko:hover::after {
+	content: attr(data-msg);
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	
+}
+
+.neko.fontColor::after {
+	color: #333;
+}
+
+#catalog-box {
+	position: absolute;
+	top: 32px;
+	right: 64px;
+	display: block;
+	background-image: url(../img/box.png);
+	background-size: contain;
+	width: 100px;
+	height: 140px;
+	background-repeat: no-repeat;
+	z-index: 99990;
+	transition: all .3s ease;
+}
+
+.catalog-list {
+	width: 100%;
+	height: 100%;
+	list-style: none;
+	padding: 10px 15px;
+	box-sizing: border-box;
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: 99989;
+}
+
+.catalog-list::-webkit-scrollbar {
+	width: 0 !important;
+}
+.catalog-list-item:hover{
+	border-bottom: 2px solid #57606f;
+}
+.catalog-list-item,.catalog-list-item a {
+	width: 100%;
+	height: 18px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 12px;
+	white-space: nowrap;
+}
+.catalog-list-item a,.catalog-list-item a:visited{
+	color: #2f3542;
+}

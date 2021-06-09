@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试</title>
+		<style type="text/css">
+			#canvas{
+				position: absolute;
+				border: 1px solid #109DFF;
+				border-radius: 5px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		</style>
+		<script type="text/javascript">
+			function draw(){
+				var canvas = document.getElementById("canvas");
+				if(canvas.getContext){
+					var ctx = canvas.getContext("2d");
+					ctx.fillStyle = "rgba(10,50,100)";
+					ctx.fillRect(10,10,75,75);
+					ctx.clearRect(35,35,35,35);
+					ctx.strokeRect(5,5,85,85);
+					ctx.beginPath();
+					ctx.moveTo(100,5);
+					ctx.lineTo(100,50);
+					ctx.lineTo(145,5);
+					ctx.fill();
+					ctx.beginPath();
+					var start = 0;
+					var end = Math.PI/2*1;
+					ctx.arc(145,90,50,start,end,true);
+					ctx.fill();
+					ctx.beginPath();
+					ctx.strokeStyle = "red"
+					ctx.lineWidth = 4;
+					ctx.arc(50,115,25,start,end);
+					ctx.stroke();
+					ctx.beginPath();
+					ctx.rect(5,100,20,20);
+					ctx.beginPath();
+					ctx.stroke();
+					// <svg t="1619938853720" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1491" width="32" height="32"><path d="M250.9 212h-86.5c-36.5 0-66.4 29.9-66.4 66.4V366c32.4-66.8 86.3-121.1 152.9-154zM98 655.5v87.6c0 36.5 29.9 66.4 66.4 66.4h86.5c-66.6-32.8-120.5-87.1-152.9-154zM861.5 212H544.7C655 266.4 731 379.6 731 510.8c0 131.2-76 244.4-186.3 298.7h316.8c36.5 0 66.4-29.9 66.4-66.4V278.4c-0.1-36.5-29.9-66.4-66.4-66.4z" fill="#24222D" p-id="1492"></path><path d="M399.9 510.8m-299.2 0a299.2 299.2 0 1 0 598.4 0 299.2 299.2 0 1 0-598.4 0Z" fill="#FF6666" p-id="1493"></path><path d="M399.9 510.8m-150 0a150 150 0 1 0 300 0 150 150 0 1 0-300 0Z" fill="#24222D" p-id="1494"></path><path d="M399.9 510.8m-20.3 0a20.3 20.3 0 1 0 40.6 0 20.3 20.3 0 1 0-40.6 0Z" fill="#FF6666" p-id="1495"></path><path d="M482.5 593.5l51.1-9.1c11.5-2 22.6 2.7 29.4 11.3 93-21.8 169.8-88.6 202.7-179.2L771 402c-23.1-14-34.8-42.2-26.7-69.3 9.6-32.2 43.5-50.6 75.7-41 32.2 9.6 50.6 43.5 41 75.7-8.7 29.2-37.3 46.9-66.6 42.9l-5.3 14.7c-35.7 98.4-118.8 170.9-219.7 194.8-2 12.6-11.7 23.2-25 25.6l-51.1 9.1c-16.7 3-32.8-8.3-35.8-25-3-17 8.2-33.1 25-36z" fill="#FFFFFF" p-id="1496"></path><path d="M846.1 610.8h-51.2c-9.5 0-17.3-7.8-17.3-17.3s7.8-17.3 17.3-17.3h51.2c9.5 0 17.3 7.8 17.3 17.3 0 9.6-7.8 17.3-17.3 17.3zM846.1 672h-51.2c-9.5 0-17.3-7.8-17.3-17.3s7.8-17.3 17.3-17.3h51.2c9.5 0 17.3 7.8 17.3 17.3s-7.8 17.3-17.3 17.3zM846.1 732.5h-51.2c-9.5 0-17.3-7.8-17.3-17.3s7.8-17.3 17.3-17.3h51.2c9.5 0 17.3 7.8 17.3 17.3s-7.8 17.3-17.3 17.3z" fill="#FFFFFF" p-id="1497"></path></svg>
+					var liusheng = new Path2D("M250.9 212h-86.5c-36.5 0-66.4 29.9-66.4 66.4V366c32.4-66.8 86.3-121.1 152.9-154zM98 655.5v87.6c0 36.5 29.9 66.4 66.4 66.4h86.5c-66.6-32.8-120.5-87.1-152.9-154zM861.5 212H544.7C655 266.4 731 379.6 731 510.8c0 131.2-76 244.4-186.3 298.7h316.8c36.5 0 66.4-29.9 66.4-66.4V278.4c-0.1-36.5-29.9-66.4-66.4-66.4z")
+					ctx.fill(liusheng);
+				}
+			}
+			function drawAudioPad(){
+				
+			}
+		</script>
+	</head>
+	<body onload="drawAudioPad()">
+		
+		<canvas id="myaudio" width="500" height="500"></canvas>
+	</body>
+
+</html>
