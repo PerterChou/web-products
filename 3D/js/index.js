@@ -3,7 +3,7 @@ const byinjie = ['C','D','F','G','A'];
 const basePitch = 2;
 
 $(document).ready(function(){
-	$(".black-key,.white-key").on("mousedown",function(){
+	$(".black-key,.white-key").on("click",function(){
 		let base = "sources/绝对音高/";
 		let pitch = $(this).data("pitch");
 		let src = base + pitch.replace(/[0-9]/,"/").replace(/#/,"b")+pitch.replace(/#/,"b")+".mp3";
